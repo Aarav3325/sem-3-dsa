@@ -50,8 +50,8 @@ int pop()
         int el = queue[front];
         if (front == rear)
         {
-            front = 0;
-            rear = 0;
+            front = -1;
+            rear = -1;
         }
         else
         {

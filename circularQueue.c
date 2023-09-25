@@ -14,7 +14,15 @@ bool isEmpty()
 
 bool isFull()
 {
-    return front == rear + 1 && rear == size - 1;
+    if (front == 0 && rear == size - 1)
+    {
+        return true;
+    }
+    if (front == rear + 1)
+    {
+        return true;
+    }
+    return false;
 }
 
 void push()
@@ -25,7 +33,8 @@ void push()
     }
     else
     {
-        if(isEmpty()){
+        if (isEmpty())
+        {
             front = 0;
         }
         int n;
@@ -61,14 +70,18 @@ int pop()
     }
 }
 
-void display(){
+void display()
+{
     int i;
-    if(isEmpty()){
+    if (isEmpty())
+    {
         printf("Underflow");
     }
-    else{
+    else
+    {
         printf("Queue :\n");
-        for(i=front;i!=rear;i=(i+1)%size){
+        for (i = front; i != rear; i = (i + 1) % size)
+        {
             printf("%d ", queue[i]);
         }
         printf("%d\n", queue[i]);
@@ -79,7 +92,7 @@ void main()
 {
     int op = 0;
 
-    while (op!=4)
+    while (op != 4)
     {
         printf("1. Push\n");
         printf("2. Pop\n");
